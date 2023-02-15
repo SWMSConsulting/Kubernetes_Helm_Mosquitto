@@ -21,12 +21,39 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 1883
+          - containerPort: 1883
         volumeMounts:
             - name: mosquitto-config
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
+            - name: mosquitto-ca-cert
+              mountPath: /mosquitto/config/certs/ca.crt
+              subPath: ca.crt
+            - name: mosquitto-server-cert
+              mountPath: /mosquitto/config/certs/server.crt
+              subPath: server.crt
+            - name: mosquitto-server-key
+              mountPath: /mosquitto/config/certs/server.key
+              subPath: server.key
       volumes:
         - name: mosquitto-config
           configMap:
+            name: mosquitto-certs
+        - name: mosquitto-ca-cert
+          configMap:
             name: mosquitto-config
+            items:
+              - key: ca.crt
+                path: ca.crt
+        - name: mosquitto-server-cert
+          configMap:
+            name: mosquitto-certs
+            items:
+              - key: server.crt
+                path: server.crt
+        - name: mosquitto-server-key
+          configMap:
+            name: mosquitto-certs
+            items:
+              - key: server.key
+                path: server.key
