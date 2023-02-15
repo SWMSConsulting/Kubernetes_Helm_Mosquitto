@@ -9,3 +9,5 @@ spec:
   ports:
   - port: 8883
     targetPort: 8883
+  - port: 1883
+    targetPort: 1883
