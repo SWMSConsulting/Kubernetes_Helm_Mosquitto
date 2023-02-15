@@ -24,9 +24,9 @@ data:
     # If not, the password file should be created
     allow_anonymous false
 
-    plugin /usr/lib/mosquitto_dynamic_security.so 
+    #plugin /usr/lib/mosquitto_dynamic_security.so 
 
-    plugin_opt_config_file /mosquitto/config/dynamic-security.json
+    #plugin_opt_config_file /mosquitto/config/dynamic-security.json
 
     per_listener_settings false
 
