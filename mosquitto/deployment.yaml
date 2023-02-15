@@ -42,19 +42,19 @@ spec:
         - name: mosquitto-config
           configMap:
             name: mosquitto-certs
-        - name: mosquitto-certs
+        - name: mosquitto-ca-cert
           configMap:
             name: mosquitto-config
             items:
               - key: ca.crt
                 path: ca.crt
-        - name: mosquitto-certs
+        - name: mosquitto-server-cert
           configMap:
             name: mosquitto-certs
             items:
               - key: server.crt
                 path: server.crt
-        - name: mosquitto-certs
+        - name: mosquitto-server-key
           configMap:
             name: mosquitto-certs
             items:
