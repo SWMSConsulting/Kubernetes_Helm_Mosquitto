@@ -42,7 +42,6 @@ spec:
             - name: mosquitto-dynsec
               mountPath: /mosquitto/config/dynamic-security.json
               subPath: dynamic-security.json
-              readOnly: false
       volumes:
         - name: mosquitto-config
           configMap:
