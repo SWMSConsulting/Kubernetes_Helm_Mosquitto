@@ -22,9 +22,15 @@ data:
 
     # Allow anonymous users to connect?
     # If not, the password file should be created
-    allow_anonymous true
+    allow_anonymous false
+
+    plugin /usr/lib/mosquitto_dynamic_security.so 
+
+    plugin_opt_config_file /mosquitto/config/dynamic-security.json
+
+    per_listener_settings false
 
     # The password file.
     # Use the `mosquitto_passwd` utility.
     # If TLS is not compiled, plaintext "username:password" lines bay be used
-    # password_file /mosquitto/config/passwd
+    #password_file /mosquitto/config/passwd
