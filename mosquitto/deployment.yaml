@@ -39,9 +39,6 @@ spec:
               mountPath: /mosquitto/config/certs/server.key
               subPath: server.key
               readOnly: true
-            - name: mosquitto-dynsec
-              mountPath: /mosquitto/config/dynamic-security.json
-              subPath: dynamic-security.json
       volumes:
         - name: mosquitto-config
           configMap:
@@ -64,6 +61,3 @@ spec:
             items:
               - key: server.key
                 path: server.key
-        - name: mosquitto-dynsec
-          configMap:
-            name: mosquitto-dynsec
