@@ -38,10 +38,10 @@ spec:
       volumes:
         - name: mosquitto-config
           configMap:
-            name: mosquitto-certs
+            name: mosquitto-config
         - name: mosquitto-ca-cert
           configMap:
-            name: mosquitto-config
+            name: mosquitto-certs
             items:
               - key: ca.crt
                 path: ca.crt
